@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pengingat Tugas & Deadline</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 text-slate-800 p-4 max-w-md mx-auto">
+
+  <div class="bg-white p-5 rounded-2xl shadow-sm mb-4">
+    <h1 class="text-xl font-bold mb-4 text-slate-900">📝 Catat Tugas</h1>
+    
+    <form id="taskForm" class="space-y-3">
+      <!-- Dropdown Pilih Mata Kuliah -->
+      <div>
+        <label class="block text-xs font-semibold uppercase text-slate-500 mb-1">Mata Kuliah</label>
+        <select id="taskMatkul" required class="w-full border rounded-lg p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white">
+          <option value="" disabled selected>-- Pilih Mata Kuliah --</option>
+          <option value="Logika dan Algoritma">Logika dan Algoritma</option>
+          <option value="Dasar Teknologi dan Informasi">Dasar Teknologi dan Informasi</option>
+          <option value="Matematika Bisnis">Matematika Bisnis</option>
+          <option value="Pengantar Organisasi dan Manajemen">Pengantar Organisasi dan Manajemen</option>
+          <option value="Logical Thinking">Logical Thinking</option>
+          <option value="Statistik & Probabilitas">Statistik & Probabilitas</option>
+          <option value="Bahasa Inggris">Bahasa Inggris</option>
+          <option value="Kewarganegaraan">Kewarganegaraan</option>
+        </select>
+      </div>
+
+      <!-- Input Detail / Nama Tugas -->
+      <div>
+        <label class="block text-xs font-semibold uppercase text-slate-500 mb-1">Tugas Apa?</label>
+        <input type="text" id="taskName" required placeholder="Contoh: Makalah Bab 1 / Latihan Soal Hal 20" class="w-full border rounded-lg p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
+
+      <!-- Input Tanggal Deadline -->
+      <div>
+        <label class="block text-xs font-semibold uppercase text-slate-500 mb-1">Tanggal Deadline</label>
+        <input type="date" id="taskDeadline" required class="w-full border rounded-lg p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
+
+      <button type="submit" class="w-full bg-blue-600 text-white font-medium p-2.5 rounded-lg text-sm hover:bg-blue-700 transition">Tambah Tugas</button>
+    </form>
+  </div>
+
+  <div class="bg-white p-5 rounded-2xl shadow-sm">
+    <div class="flex justify-between items-center mb-3">
+      <h2 class="text-lg font-bold text-slate-900">Daftar Deadline</h2>
+      <button id="enableNotifBtn" onclick="requestNotificationPermission()" class="text-xs bg-amber-100 text-amber-800 px-2.5 py-1 rounded-full font-medium">Aktifkan Notif</button>
+    </div>
+    <ul id="taskList" class="space-y-2"></ul>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
